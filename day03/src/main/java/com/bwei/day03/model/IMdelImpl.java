@@ -29,7 +29,7 @@ public class IMdelImpl implements IModel {
             }
         });*/
 
-       RetrofitManager.getInstance().post(dataUrl,params).post(dataUrl,params).result(new RetrofitManager.HttpListener() {
+       RetrofitManager.getInstance().post(dataUrl,params).result(new RetrofitManager.HttpListener() {
            @Override
            public void onSuccess(String data) {
                Object o = new Gson().fromJson(data, clazz);

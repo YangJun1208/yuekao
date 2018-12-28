@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.bwei.day03.bean.XiangBean;
 import com.bwei.day03.fragment.FragmentOne;
 import com.bwei.day03.fragment.FragmentTwo;
+import com.bwei.day03.fragment.FregmentThree;
 import com.bwei.day03.persenter.IPersenterImpl;
 import com.bwei.day03.view.IView;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -54,6 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         list = new ArrayList<>();
         list.add(new FragmentOne());
         list.add(new FragmentTwo());
+        list.add(new FregmentThree());
         //添加适配器
         pager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
@@ -72,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    @OnClick({R.id.radio1,R.id.radio2})
+    @OnClick({R.id.radio1,R.id.radio2,R.id.radio3})
     public void click(View v){
         switch (v.getId()){
             case R.id.radio1:
@@ -80,6 +82,9 @@ public class LoginActivity extends AppCompatActivity {
                 break;
             case R.id.radio2:
                 pager.setCurrentItem(1);
+                break;
+            case R.id.radio3:
+                pager.setCurrentItem(2);
                 break;
             default:
                 break;
